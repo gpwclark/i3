@@ -228,6 +228,15 @@ set $ws8 "ocho"
 set $ws0 "cero"
 
 # discover class named with xprop | grep CLASS
+assign [class="obsidian"] $ws8
+exec --no-startup-id i3-msg 'exec obsidian'
+
+assign [class="anki"] $ws8
+exec --no-startup-id i3-msg 'exec anki'
+
+assign [class="firefox"] $ws0
+exec --no-startup-id i3-msg 'exec firefox'
+
 assign [class="st-256-color"] $ws1
 exec --no-startup-id i3-msg 'exec st'
 
@@ -237,17 +246,11 @@ exec --no-startup-id i3-msg 'exec pritunl-client-electron'
 assign [class="jetbrains-toolbox"] $ws2
 exec --no-startup-id i3-msg 'exec jetbrains-toolbox'
 
-assign [class="obsidian"] $ws8
-exec --no-startup-id i3-msg 'exec obsidian'
-
 assign [class="Slack"] $ws3
 exec --no-startup-id i3-msg 'exec slack'
 
 assign [class="firefoxdeveloperedition"] $ws3
 exec --no-startup-id i3-msg 'exec firefox-developer-edition'
-
-assign [class="firefox"] $ws0
-exec --no-startup-id i3-msg 'exec firefox'
 
 exec --no-startup-id i3-msg 'exec /usr/lib/notification-daemon-1.0/notification-daemon'
 #exec --no-startup-id i3-msg 'exec /home/price/development/slsh/docs/serve-local-docs.lisp' &> /tmp/i3-startup-serve-local-docs.log
