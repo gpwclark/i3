@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEXT=("P A T I E N C E -- S U N K  C O S T S" "L I S T  T H E  F A C T S" "M E T A C O G N I T I O N" "C O U L D  D O  N O T  S H O U L D  D O")
+TEXT=("P A T I E N C E -- S U N K  C O S T S" "L I S T  T H E  F A C T S" "M E T A C O G N I T I O N" "C O U L D  D O  N O T  S H O U L D  D O" "C U L T I V A T E  D I S P A S S I O N")
 #TEXT=("O H  H E Y  T H E R E" "Y O U  A G A I N ?" "T H E  B I G  S C R E E N")
 VAR="$(shuf -i 0-3 -n 1)"
 echo "<span foreground='#000000' background='#FF$(echo -e $(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 )))'><i><b>${TEXT[VAR]}</b></i></span>"
