@@ -74,6 +74,4 @@ URxvt.scrollBar: false
 URxvt.intensityStyles: false
 
 xterm*faceName:Hack:style=Regular:size=10
-xterm*modifyOtherKeys:2
-xterm*formatOtherKeys:1
 xterm*title:terminal
