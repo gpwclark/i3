@@ -17,15 +17,17 @@
 
 # Check mouse event
 case $BLOCK_BUTTON in
-    3)
-    #/usr/bin/pactl set-source-mute 0 toggle;  # PulseAudio
-    sudo /usr/bin/amixer set Capture toggle &>/dev/null;  # AlsaMixer
-    ;;
+    4) pamixer --unmute ;; # scroll up unmute
+	5) pamixer --mute ;; # scroll down mute
 esac
 
 
 # Determine mic's state
-amixer contents | grep -q "values=off" && [[ $? -eq 0 ]] && state="off";  # If you use AlaMixer
+if [[ $(pamixer --get-mute) == "true" ]]; then
+	state="off"
+else
+	state="on"
+fi
 #/usr/bin/pactl list sources | grep -q "Mute: no" && [[ $? -eq 0 ]] && state="on";  # If you rather go with PulseAudio
 
 
