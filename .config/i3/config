@@ -200,18 +200,14 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
-# for remapping arrow keys
-mode "remaparrowkeys" {
-        bindsym k exec xdotool key Up
-        bindsym h exec xdotool key Left
-        bindsym j exec xdotool key Down
-        bindsym l exec xdotool key Right
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+mode "moveit" {
+	bindsym Up move up 20px
+	bindsym Left move left 20px
+	bindsym Down move down 20px
+	bindsym Right move right 20px
+	bindsym $mod+Shift+s mode "default"
 }
-
-bindsym $mod+n mode "remaparrowkeys"
+bindsym $mod+Shift+s focus floating; mode "moveit"
 
 #colors?
 #class                  border  backgr. text    indicator child_border
