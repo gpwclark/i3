@@ -218,15 +218,29 @@ bindsym $mod+n exec i3lock -c "#000000"
 
 
 # programs to run at startup
-exec --no-startup-id i3-msg 'workspace uno; exec /home/price/development/slsh/docs/serve-local-docs.lisp'
-exec --no-startup-id i3-msg 'workspace uno; exec jetbrains-toolbox'
-exec --no-startup-id i3-msg 'workspace uno; exec pritunl-client-electron'
-# exec --no-startup-id i3-msg 'workspace uno; exec ~/development/leo-editor/launchLeoTmux.sh'
-exec --no-startup-id i3-msg 'workspace uno; exec obsidian'
-exec --no-startup-id i3-msg 'workspace uno; exec st'
-exec --no-startup-id i3-msg 'workspace uno; exec brave'
-exec --no-startup-id i3-msg 'workspace uno; exec firefox-developer-edition'
-exec --no-startup-id i3-msg 'workspace uno; exec slack'
-exec --no-startup-id i3-msg 'workspace uno; exec google-chrome-stable'
-# exec --no-startup-id slack
+set $ws1 "uno"
+set $ws2 "dos"
+set $ws3 "tres"
+
+# discover class named with xprop | grep CLASS
+assign [class="st-256-color"] $ws1
+exec --no-startup-id i3-msg 'exec st'
+
+assign [class="pritunl"] $ws1
+exec --no-startup-id i3-msg 'exec pritunl-client-electron'
+
+assign [class="jetbrains-toolbox"] $ws2
+exec --no-startup-id i3-msg 'exec jetbrains-toolbox'
+
+assign [class="obsidian"] $ws2
+exec --no-startup-id i3-msg 'exec obsidian'
+
+assign [class="Slack"] $ws3
+exec --no-startup-id i3-msg 'exec slack'
+
+assign [class="firefoxdeveloperedition"] $ws3
+exec --no-startup-id i3-msg 'exec firefox-developer-edition'
+
+exec --no-startup-id i3-msg 'exec /usr/lib/notification-daemon-1.0/notification-daemon'
+exec --no-startup-id i3-msg 'exec /home/price/development/slsh/docs/serve-local-docs.lisp'
 exec --no-startup-id udiskie --tray --notify
