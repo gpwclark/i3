@@ -20,4 +20,4 @@ case $BLOCK_BUTTON in
   5) light -U 10 ;; # scroll down
 esac
 
-echo '☼' $(light -b | sed "s/\..*/%/")
+echo '☼' $(light | sed "s/\..*/%/")

@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec /usr/local/bin/st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -203,15 +203,6 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
-mode "moveit" {
-	bindsym Up move up 20px
-	bindsym Left move left 20px
-	bindsym Down move down 20px
-	bindsym Right move right 20px
-	bindsym $mod+Shift+s mode "default"
-}
-bindsym $mod+Shift+s focus floating; mode "moveit"
-
 #colors?
 #class                  border  backgr. text    indicator child_border
 client.focused          #000000 #ff0000 #ffffff #2e9ef4   #000000
@@ -221,3 +212,17 @@ client.urgent           #e8ff00 #993366 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #ffffff   #0c0c0c
 
 client.background       #ffffff
+
+# lock i3
+bindsym $mod+n exec i3lock -c "#000000"
+
+
+# programs to run at startup
+exec --no-startup-id jetbrains-toolbox
+#exec --no-startup-id firefox
+exec --no-startup-id snap run brave
+exec --no-startup-id firefox-developer-edition
+exec --no-startup-id slack
+exec --no-startup-id pritunl-client-electron
+exec --no-startup-id udiskie --tray --use-udisks2
+exec --no-startup-id st
