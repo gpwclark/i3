@@ -1,5 +1,5 @@
 #!/bin/bash
 
-#echo '<span foreground="#FF0000"><i>Testing</i></span>'
-#echo '<span foreground="#0033cc" background="#FF'$(echo -e "$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))")'"><i><b>C O N S I D E R   A L T   I M P L</b></i></span>'
-echo '<span foreground="#000000" background="#FF'$(echo -e "$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))")'"><i><b>C O M M I T  E A R L Y  C O M M I T  O F T E N</b></i></span>'
+TEXT=("C O M M I T  E A R L Y  C O M M I T  O F T E N" "R U B B E R  D U C K" "L I S T  T H E  F A C T S" "M E T A C O G N I T I O N")
+VAR="$(shuf -i 0-3 -n 1)"
+echo "<span foreground='#000000' background='#FF$(echo -e $(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 ))$(( $RANDOM * 9 / 32767 + 1 )))'><i><b>${TEXT[VAR]}</b></i></span>"
