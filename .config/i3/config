@@ -114,8 +114,8 @@ bindsym $mod+Shift+5 move container to workspace cinco
 bindsym $mod+Shift+6 move container to workspace seis
 bindsym $mod+Shift+7 move container to workspace siete
 bindsym $mod+Shift+8 move container to workspace ocho
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+9 move container to workspace nueve
+bindsym $mod+Shift+0 move container to workspace diez
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -159,9 +159,9 @@ bar {
             background #000000
                 statusline #ffffff
                 separator #666666
-                focused_workspace  #926292 #644364 #ffffff
-                active_workspace   #333333 #5f676a #ffffff
-                inactive_workspace #333333 #222222 #888888
+                focused_workspace  #ff0000 #ff0000 #ffffff
+                active_workspace   #333333 #e8ff00 #000000
+                inactive_workspace #333333 #e8ff00 #000000
                 urgent_workspace   #2f343a #900000 #ffffff
         }
 }
@@ -182,12 +182,41 @@ bindsym XF86AudioRaiseVolume exec ponymix increase 5
 bindsym XF86AudioLowerVolume exec ponymix decrease 5
 bindsym XF86AudioMute exec ponymix toggle
 
+# for hibernation
+bindsym XF86Launch1 exec systemctl hibernate
+
+# for the calculator!
+bindsym XF86Calculator exec gnome-calculator
+
+# for marking windows and traveling to them
+bindsym $mod+m exec i3-input -F 'mark %s' -P 'Mark name: '
+bindsym $mod+Shift+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
+
+# scrot & gimp - root
+bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+
+# scrot & gimp - select window or rectangle
+bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+
+# for remapping arrow keys
+mode "remaparrowkeys" {
+        bindsym k exec xdotool key Up
+        bindsym h exec xdotool key Left
+        bindsym j exec xdotool key Down
+        bindsym l exec xdotool key Right
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+n mode "remaparrowkeys"
+
 #colors?
 #class                  border  backgr. text    indicator child_border
-client.focused          #4c015e #926292 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #000000 #ff0000 #ffffff #2e9ef4   #000000
+client.focused_inactive #000000 #606060 #ffffff #484e50   #000000
+client.unfocused        #000000 #e8ff00 #000000 #292d2e   #222222
+client.urgent           #e8ff00 #993366 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #ffffff   #0c0c0c
 
 client.background       #ffffff
