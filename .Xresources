@@ -27,8 +27,8 @@
 #define S_base3         #fdf6e3
 
 
-! ! Light
-! 
+! Light
+
 ! #define S_base03        #fdf6e3
 ! #define S_base02        #eee8d5
 ! #define S_base01        #93a1a1
@@ -41,7 +41,6 @@
 
 ! To only apply colors to your terminal, for example, prefix
 ! the color assignment statement with its name. Example:
-
 ! URxvt*background:            S_base03
 
 *background:              S_base03
@@ -75,3 +74,5 @@ URxvt.intensityStyles: false
 
 xterm*faceName:Hack:style=Regular:size=10
 xterm*title:terminal
+st*font: Hack:pixelsize=24:antialias=true:autohint=true
+st*shell: /usr/local/bin/sl-sh
