@@ -91,7 +91,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace uno
@@ -154,7 +154,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 #        status_command i3status
-    status_command SCRIPT_DIR=/usr/lib/i3blocks i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command SCRIPT_DIR=$HOME/.config/i3/scripts/ i3blocks -c ~/.config/i3/i3blocks.conf
         colors {
             background #000000
                 statusline #ffffff
@@ -180,3 +180,12 @@ bindsym XF86AudioRaiseVolume exec ponymix increase 5
 bindsym XF86AudioLowerVolume exec ponymix decrease 5
 bindsym XF86AudioMute exec ponymix toggle
 
+#colors?
+#class                  border  backgr. text    indicator child_border
+client.focused          #4c015e #926292 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
