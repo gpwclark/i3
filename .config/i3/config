@@ -221,11 +221,12 @@ bindsym $mod+n exec i3lock -c "#000000"
 exec --no-startup-id i3-msg 'workspace uno; exec /home/price/development/slsh/docs/serve-local-docs.lisp'
 exec --no-startup-id i3-msg 'workspace uno; exec jetbrains-toolbox'
 exec --no-startup-id i3-msg 'workspace uno; exec pritunl-client-electron'
-exec --no-startup-id i3-msg 'workspace uno; exec ~/development/leo-editor/launchLeoTmux.sh'
+# exec --no-startup-id i3-msg 'workspace uno; exec ~/development/leo-editor/launchLeoTmux.sh'
+exec --no-startup-id i3-msg 'workspace uno; exec obsidian'
 exec --no-startup-id i3-msg 'workspace uno; exec st'
 exec --no-startup-id i3-msg 'workspace uno; exec brave'
 exec --no-startup-id i3-msg 'workspace uno; exec firefox-developer-edition'
 exec --no-startup-id i3-msg 'workspace uno; exec slack'
 exec --no-startup-id i3-msg 'workspace uno; exec google-chrome-stable'
-#exec --no-startup-id slack
+# exec --no-startup-id slack
 exec --no-startup-id udiskie --tray --notify
