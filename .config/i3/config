@@ -169,6 +169,8 @@ bar {
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
+# commands to move container to monitor above current screen and back
+bindsym $mod+x move workspace to output up
 
 # using program xev I determined the scancodes for brightness up and down with the help
 # of the wonderful iamevn
