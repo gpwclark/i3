@@ -1,0 +1,152 @@
+// vim:ts=4:sw=4:et
+{
+    // stacked split container with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 1,
+            "type": "con",
+            "nodes": [
+                {
+                    // splitv split container with 1 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "splitv",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 600,
+                               "width": 800,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "wiki - http://localhost:9001/",
+                            "percent": 1,
+                            "swallows": [
+                               {
+                               "class": "^luakit$",
+                               "instance": "^wiki.*",
+                               "title": ".*wiki.*",
+                               "transient_for": "^$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                },
+                {
+                    // stacked split container with 4 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "stacked",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 400,
+                               "width": 550,
+                               "x": 525,
+                               "y": 250
+                            },
+                            "name": "Wicd Network Manager",
+                            "percent": 0.25,
+                            "swallows": [
+                               {
+                               "class": "^Wicd\\-client\\.py$",
+                               "instance": "^wicdsetup$",
+                               "title": "^Wicd\\ Network\\ Manager$",
+                               "transient_for": "^$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 825,
+                               "width": 796,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "CREATURE — Konsole",
+                            "percent": 0.25,
+                            "swallows": [
+                               {
+                               "class": ".*CREATURE - konsole.*",
+                               "instance": "^konsole$",
+                               //"title": "^price\\ \\:\\ vim\\ \\—\\ Konsole$",
+                               "transient_for": "^$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 807,
+                               "width": 796,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "SNOW — Konsole",
+                            "percent": 0.25,
+                            "swallows": [
+                               {
+                               "class": ".*SNOW - konsole.*",
+                               "instance": "^konsole$",
+                               //"title": "^price\\ \\:\\ tmux\\ \\—\\ Konsole$",
+                               "transient_for": "^$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 807,
+                               "width": 796,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "ARCHROCK — Konsole",
+                            "percent": 0.25,
+                            "swallows": [
+                               {
+                               "class": ".*ARCHROCK - konsole.*",
+                               "instance": "^konsole$",
+                               //"title": "^price\\ \\:\\ zsh\\ \\—\\ Konsole$",
+                               "transient_for": "^$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
