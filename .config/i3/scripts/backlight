@@ -15,9 +15,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 case $BLOCK_BUTTON in
-  2) xbacklight -set 0 ;;  # black screen on mmb
-  4) xbacklight -inc 10 ;; # scroll up
-  5) xbacklight -dec 10 ;; # scroll down
+  2) light -S 0 ;;  # black screen on mmb
+  4) light -A 10 ;; # scroll up
+  5) light -U 10 ;; # scroll down
 esac
 
-echo '☼' $(xbacklight | sed "s/\..*/%/")
+echo '☼' $(light -b | sed "s/\..*/%/")

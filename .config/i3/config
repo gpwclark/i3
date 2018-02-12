@@ -174,8 +174,10 @@ bindsym $mod+x move workspace to output up
 
 # using program xev I determined the scancodes for brightness up and down with the help
 # of the wonderful iamevn
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec light -A 5
+bindsym XF86MonBrightnessUp exec light -U 5
+bindcode 224 exec light -A 5
+bindcode 225 exec light -U 5
 
 # for volume
 bindsym XF86AudioRaiseVolume exec ponymix increase 5
