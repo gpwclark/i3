@@ -218,11 +218,19 @@ bindsym $mod+n exec i3lock -c "#000000"
 
 
 # programs to run at startup
-exec --no-startup-id jetbrains-toolbox
-#exec --no-startup-id firefox
-exec --no-startup-id snap run brave
-exec --no-startup-id firefox-developer-edition
-exec --no-startup-id slack
-exec --no-startup-id pritunl-client-electron
+exec --no-startup-id i3-msg 'workspace diez; exec jetbrains-toolbox'
+#exec --no-startup-id jetbrains-toolbox
+exec --no-startup-id i3-msg 'workspace uno; exec pritunl-client-electron'
+#exec --no-startup-id pritunl-client-electron
+exec --no-startup-id i3-msg 'workspace uno; exec ~/development/leo-editor/launchLeo.sh'
+#exec --no-startup-id ~/development/leo-editor/launchLeo.sh
+exec --no-startup-id i3-msg 'workspace uno; exec st'
+#exec --no-startup-id st
+exec --no-startup-id i3-msg 'workspace tres; exec brave'
+#exec --no-startup-id snap run brave
+exec --no-startup-id i3-msg 'workspace tres; exec firefox-developer-edition'
+#exec --no-startup-id firefox-developer-edition
+exec --no-startup-id i3-msg 'workspace tres; exec slack'
+
+#exec --no-startup-id slack
 exec --no-startup-id udiskie --tray --notify
-exec --no-startup-id st
