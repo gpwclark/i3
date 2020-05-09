@@ -218,6 +218,7 @@ bindsym $mod+n exec i3lock -c "#000000"
 
 
 # programs to run at startup
+exec --no-startup-id i3-msg 'workspace uno; exec /home/price/development/slsh/docs/serve-local-docs.lisp'
 exec --no-startup-id i3-msg 'workspace uno; exec jetbrains-toolbox'
 exec --no-startup-id i3-msg 'workspace uno; exec pritunl-client-electron'
 exec --no-startup-id i3-msg 'workspace uno; exec ~/development/leo-editor/launchLeoTmux.sh'
