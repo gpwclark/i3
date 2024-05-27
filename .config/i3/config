@@ -17,7 +17,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 7
+#font pango:DejaVu Sans Mono 7
+font pango:IBM Plex Sans 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -30,7 +31,8 @@ font pango:DejaVu Sans Mono 7
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/local/bin/st
+bindsym $mod+Return exec /usr/local/bin/st -f "IBM Plex Mono:pixelsize=22:antialias=true:autohint=true"
+#bindsym $mod+Return exec /home/price/bin/rterm -f "IBM Plex Mono:pixelsize=32:antialias=true:autohint=true"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -170,6 +172,7 @@ bar {
 }
 
 bindsym $mod+z workspace back_and_forth
+bindsym $mod+p workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
 # commands to move container to monitor above current screen and back
@@ -228,22 +231,19 @@ set $ws8 "ocho"
 set $ws0 "cero"
 
 # discover class named with xprop | grep CLASS
-assign [class="obsidian"] $ws8
-exec --no-startup-id i3-msg 'exec obsidian'
+#assign [class="obsidian"] $ws8
+#exec --no-startup-id i3-msg 'exec obsidian'
 
-assign [class="anki"] $ws8
-exec --no-startup-id i3-msg 'exec anki'
+#assign [class="anki"] $ws8
+#exec --no-startup-id i3-msg 'exec anki'
 
-#assign [class="firefox"] $ws0
-exec --no-startup-id i3-msg 'exec firefox'
+#assign [class="firefox"] $ws7
+#exec --no-startup-id i3-msg 'exec firefox'
 
-assign [class="st-256-color"] $ws1
+assign [class="st-256-color"] $ws9
 exec --no-startup-id i3-msg 'exec st'
 
-assign [class="pritunl"] $ws1
-exec --no-startup-id i3-msg 'exec pritunl-client-electron'
-
-assign [class="jetbrains-toolbox"] $ws2
+assign [class="jetbrains-toolbox"] $ws0
 exec --no-startup-id i3-msg 'exec jetbrains-toolbox'
 
 #assign [class="Slack"] $ws3
@@ -258,3 +258,17 @@ exec --no-startup-id /home/price/sl-sh-dev/sl-sh/docs/serve-local-docs.lisp &> /
 exec --no-startup-id /usr/bin/touch /tmp/i3-file.log
 exec --no-startup-id i3-msg 'exec /usr/bin/syncthingtray'
 exec --no-startup-id udiskie --tray --notify
+
+# sway baby!
+#output eDP-1 mode 3840x2160@60Hz
+#output HDMI-0 mode 7680x2160@120Hz
+#output eDP-1 {
+#	mode 3840x2400@60Hz
+#}
+#output HDMI-0 {
+#	mode 7680x2160@120Hz
+#}
+#primary
+# --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output eDP-1-1
+#--mode 3840x2400 --pos 1585x2160 --rotate normal
+

@@ -76,3 +76,48 @@ xterm*faceName:Hack:style=Regular:size=10
 xterm*title:terminal
 st*font: Hack:pixelsize=24:antialias=true:autohint=true
 st*shell: /usr/local/bin/sl-sh
+
+!Xft.dpi: 250
+!*dpi: 250
+
+! These might also be useful depending on your monitor and personal preference:
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xcursor.size: 48
+Xft.dpi: 150
+
+
+
+! Xcursor.size
+! You can read the sizes from the output of xdd -c12 -g4 -e <cursor> | head. E.g. for DMZ-White from dmz-cursor-theme on Ubuntu 22.04 this looks like
+! 
+! $ xxd -c12 -g4 -e /usr/share/icons/DMZ-White/cursors/X_cursor | head
+! 00000000: 72756358 00000010 00010000  Xcur........
+! 0000000c: 00000003 fffd0002 00000018  ............
+! 00000018: 00000034 fffd0002 00000020  4....... ...
+! 00000024: 00000958 fffd0002 00000030  X.......0...
+! 00000030: 0000197c 00000024 fffd0002  |...$.......
+! 0000003c: 00000018 00000001 00000018  ............
+! 00000048: 00000018 0000000b 0000000b  ............
+! 00000054: 00000032 00000000 00000000  2...........
+! 00000060: 00000000 00000000 00000000  ............
+! 0000006c: 00000000 00000000 00000000  ............
+!
+! The following parts of the output are relevant:
+!
+! 00000000: 72756358 00000010 00010000 Xcur........
+! 0000000c: 00000003 fffd0002 00000018 ............
+! 00000018: 00000034 fffd0002 00000020 4....... ...
+! 00000024: 00000958 fffd0002 00000030 X.......0...
+!
+!     The bold marked Xcur at the top right ensures this is a Xcursor file
+!     The bold marked 00000003 at the top left are the number of relevant following lines (in hex)
+!     The italic marked fffd0002 ensures the line corresponds to a cursor size. If it shows fffd0001 instead, ignore the line!
+!     The bold marked 00000018, 00000020 and 00000030 are the cursor sizes in hex
+!
+!     In this case, the Xcursor file contains three cursors in the sizes 24, 32 and 48 (in decimal).
+!
