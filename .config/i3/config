@@ -17,8 +17,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 7
-font pango:IBM Plex Sans 10
+font pango:DejaVu Sans Mono 10
+#font pango:IBM Plex Sans 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -31,7 +31,8 @@ font pango:IBM Plex Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/local/bin/st -f "IBM Plex Mono:pixelsize=22:antialias=true:autohint=true"
+# because my bashrc is running these
+bindsym $mod+Return exec /usr/local/bin/st -f "Fira Mono:pixelsize=26:antialias=true:autohint=true:style=Medium" /usr/bin/zsh
 #bindsym $mod+Return exec /home/price/bin/rterm -f "IBM Plex Mono:pixelsize=32:antialias=true:autohint=true"
 
 # kill focused window
@@ -241,16 +242,26 @@ set $ws0 "cero"
 #exec --no-startup-id i3-msg 'exec firefox'
 
 assign [class="st-256-color"] $ws9
-exec --no-startup-id i3-msg 'exec st'
+exec --no-startup-id i3-msg 'exec st /bin/bash'
+exec --no-startup-id i3-msg 'exec st ~/.screenlayout/i3_blackweave_lenovo.sh'
 
-assign [class="jetbrains-toolbox"] $ws0
-exec --no-startup-id i3-msg 'exec jetbrains-toolbox'
+assign [class="jetbrains-toolbox"] $ws8
+exec --no-startup-id i3-msg 'exec ~/bin/jetbrains-toolbox'
+
+assign [class="jetbrains-idea"] $ws8
+exec --no-startup-id i3-msg 'exec ~/bin/idea'
+
+assign [class="brave-browser"] $ws9
+exec --no-startup-id i3-msg 'exec brave-browser-stable'
+
+assign [class="slack"] $ws9
+exec --no-startup-id i3-msg 'exec slack'
 
 #assign [class="Slack"] $ws3
 #exec --no-startup-id i3-msg 'exec slack'
 
 #assign [class="firefoxdeveloperedition"] $ws3
-exec --no-startup-id i3-msg 'exec firefox-developer-edition'
+exec --no-startup-id i3-msg 'exec firefox'
 
 exec --no-startup-id i3-msg 'exec /usr/lib/notification-daemon-1.0/notification-daemon'
 #exec --no-startup-id i3-msg 'exec /home/price/development/slsh/docs/serve-local-docs.lisp' &> /tmp/i3-startup-serve-local-docs.log
