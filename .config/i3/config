@@ -268,6 +268,7 @@ exec --no-startup-id i3-msg 'exec /usr/lib/notification-daemon-1.0/notification-
 exec --no-startup-id /home/price/sl-sh-dev/sl-sh/docs/serve-local-docs.lisp &> /tmp/i3-startup-serve-local-docs.log
 exec --no-startup-id /usr/bin/touch /tmp/i3-file.log
 exec --no-startup-id i3-msg 'exec /usr/bin/syncthingtray'
+exec --no-startup-id i3-msg 'exec /usr/bin/blueman-tray'
 exec --no-startup-id udiskie --tray --notify
 
 # sway baby!
