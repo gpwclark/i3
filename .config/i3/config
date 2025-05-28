@@ -223,7 +223,6 @@ client.background       #ffffff
 # lock i3
 bindsym $mod+n exec i3lock -c "#000000"
 
-
 # programs to run at startup
 set $ws1 "uno"
 set $ws2 "dos"
@@ -242,7 +241,7 @@ set $ws0 "cero"
 #exec --no-startup-id i3-msg 'exec firefox'
 
 assign [class="st-256-color"] $ws9
-exec --no-startup-id i3-msg 'exec st /bin/bash'
+exec --no-startup-id i3-msg 'exec st /usr/bin/zsh'
 exec --no-startup-id i3-msg 'exec st ~/.screenlayout/i3_blackweave_lenovo.sh'
 
 assign [class="jetbrains-toolbox"] $ws8
@@ -267,9 +266,11 @@ exec --no-startup-id i3-msg 'exec /usr/lib/notification-daemon-1.0/notification-
 #exec --no-startup-id i3-msg 'exec /home/price/development/slsh/docs/serve-local-docs.lisp' &> /tmp/i3-startup-serve-local-docs.log
 exec --no-startup-id /home/price/sl-sh-dev/sl-sh/docs/serve-local-docs.lisp &> /tmp/i3-startup-serve-local-docs.log
 exec --no-startup-id /usr/bin/touch /tmp/i3-file.log
+
 exec --no-startup-id i3-msg 'exec /usr/bin/syncthingtray'
 exec --no-startup-id i3-msg 'exec /usr/bin/blueman-tray'
-exec --no-startup-id udiskie --tray --notify
+exec --no-startup-id i3-msg 'exec /usr/bin/udiskie --tray --notify'
+
 
 # sway baby!
 #output eDP-1 mode 3840x2160@60Hz

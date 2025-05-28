@@ -14,18 +14,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#case $BLOCK_BUTTON in
-#  2) xbacklight -set 1 ;;  # black screen on mmb
-#  4) xbacklight -inc +5 ;; # scroll up
-#  5) xbacklight -dec +5 ;; # scroll down
-#esac
-#
-#echo '☼' $(xbacklight | sed "s/\..*/%/")
-
 case $BLOCK_BUTTON in
-  2) light S 0 ;;  # black screen on mmb
-  4) light -A 5 ;; # scroll up
-  5) light -U 5 ;; # scroll down
+  2) xbacklight -set 1 ;;  # black screen on mmb
+  4) xbacklight -inc +5 ;; # scroll up
+  5) xbacklight -dec +5 ;; # scroll down
 esac
 
-echo '☼' $(light | sed "s/\..*/%/")
+echo '☼' $(xbacklight | sed "s/\..*/%/")
+#
+#case $BLOCK_BUTTON in
+#  2) light S 0 ;;  # black screen on mmb
+#  4) light -A 5 ;; # scroll up
+#  5) light -U 5 ;; # scroll down
+#esac
+#
+#echo '☼' $(light | sed "s/\..*/%/")
