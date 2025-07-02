@@ -187,9 +187,9 @@ bindcode 224 exec light -U 5
 bindcode 225 exec light -A 5
 
 # for volume
-bindsym XF86AudioRaiseVolume exec ponymix increase 5
-bindsym XF86AudioLowerVolume exec ponymix decrease 5
-bindsym XF86AudioMute exec ponymix toggle
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 1%+
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 1%-
+bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 # for mic
 bindsym XF86AudioMicMute exec sudo /usr/bin/amixer set Capture toggle
@@ -210,6 +210,14 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
+#bindcode 135 workspace back_and_forth
+#bindcode --release 135 workspace back_and_forth
+#bindcode 135 exec arecord -f cd -t wav -D pulse /tmp/recording.wav && notify-send -t 1000 "Recording" "Wrote recording"
+#bindcode --release 135 exec whisper /tmp/recording.wav --threads 32 --language English --task transcribe --output_dir /tmp/ --output_format txt --verbose False >/dev/null 2>&1 && cat /tmp/recording.txt | xclip -selection c && rm /tmp/recording.txt && notify-send -t 2000 "Recording" "Finished recording audio"
+
+bindcode --release 135 exec ~/bin/record-end
+bindcode 135 exec ~/bin/record-start
+
 #colors?
 #class                  border  backgr. text    indicator child_border
 client.focused          #000000 #ff0000 #ffffff #2e9ef4   #000000
@@ -229,10 +237,7 @@ set $ws2 "dos"
 set $ws3 "tres"
 set $ws8 "ocho"
 set $ws0 "cero"
-
-# discover class named with xprop | grep CLASS
-#assign [class="obsidian"] $ws8
-#exec --no-startup-id i3-msg 'exec obsidian'
+# discover class named with xprop | grep CLASS #assign [class="obsidian"] $ws8 #exec --no-startup-id i3-msg 'exec obsidian'
 
 #assign [class="anki"] $ws8
 #exec --no-startup-id i3-msg 'exec anki'
