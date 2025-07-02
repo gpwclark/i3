@@ -215,8 +215,8 @@ bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 #bindcode 135 exec arecord -f cd -t wav -D pulse /tmp/recording.wav && notify-send -t 1000 "Recording" "Wrote recording"
 #bindcode --release 135 exec whisper /tmp/recording.wav --threads 32 --language English --task transcribe --output_dir /tmp/ --output_format txt --verbose False >/dev/null 2>&1 && cat /tmp/recording.txt | xclip -selection c && rm /tmp/recording.txt && notify-send -t 2000 "Recording" "Finished recording audio"
 
-bindcode --release 135 exec ~/bin/record-end
-bindcode 135 exec ~/bin/record-start
+bindcode --release 135 exec ~/bin/record-end.sh
+bindcode 135 exec ~/bin/record-start.sh
 
 #colors?
 #class                  border  backgr. text    indicator child_border
